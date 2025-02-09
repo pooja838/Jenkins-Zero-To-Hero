@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class StartApplication {
 
     @GetMapping("/")
-    public String home(final Model model) {
-        model.addAttribute("pageTitle", "Spring Boot Application with Maven");
-        model.addAttribute("message", "This application is successfully deployed on Kubernetes using Argo CD!");
+    public String index(final Model model) {
+        model.addAttribute("title", "I have successfuly built a sprint boot application using Maven");
+        model.addAttribute("msg", "This application is deployed on to Kubernetes using Argo CD");
         return "index";
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(StartApplication.class, args);
     }
+
 }
